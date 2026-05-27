@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kashyap Care | In Memory of Smt. Lalita Kumari</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --warm-900: #2a1005;
+      --warm-800: #3d1f08;
+      --warm-700: #5c3520;
+      --warm-600: #7a4a22;
+      --warm-500: #9e6335;
+      --warm-400: #c9a98a;
+      --warm-300: #e0c4a8;
+      --warm-200: #f0dac5;
+      --warm-100: #f8f0e8;
+      --warm-50:  #fdf8f4;
+      --green-600: #1a6b4a;
+      --green-100: #d8ece8;
+      --blue-600: #2b4a8a;
+      --blue-100: #e0e8fc;
+      --red-600: #8a2525;
+      --red-100: #fce8e8;
+      --text: #1a1209;
+      --text-muted: #6b5a48;
+      --border: rgba(122,74,34,0.15);
+      --white: #ffffff;
+      --shadow: 0 4px 24px rgba(61,31,8,0.10);
+      --shadow-lg: 0 12px 48px rgba(61,31,8,0.15);
+      --radius: 14px;
+      --radius-sm: 8px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--warm-50);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(253,248,244,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--warm-800);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--warm-500);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--warm-700); }
+
+    .nav-cta {
+      background: var(--warm-600);
+      color: #fff !important;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 13px !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--warm-800) !important; color: #fff !important; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--warm-700); border-radius: 2px; transition: all 0.3s; display: block; }
+
+    /* ── HERO ── */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 100px 2rem 4rem;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(201,169,138,0.35) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 20% 80%, rgba(158,99,53,0.15) 0%, transparent 55%),
+        linear-gradient(160deg, #fdf8f4 0%, #f5ede3 50%, #e8d5c4 100%);
+    }
+
+    .hero-circles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .hero-circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(201,169,138,0.3);
+    }
+
+    .hero-circle:nth-child(1) { width: 500px; height: 500px; top: -100px; right: -100px; animation: spin-slow 40s linear infinite; }
+    .hero-circle:nth-child(2) { width: 300px; height: 300px; top: 50px; right: 50px; animation: spin-slow 30s linear infinite reverse; }
+    .hero-circle:nth-child(3) { width: 200px; height: 200px; bottom: 50px; left: 5%; animation: spin-slow 20s linear infinite; }
+
+    @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    .hero-content {
+      position: relative;
+      max-width: 700px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--warm-200);
+      color: var(--warm-700);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--warm-500); }
+
+    h1.hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--warm-900);
+      margin-bottom: 0.4rem;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    .hero-title span { color: var(--warm-600); }
+
+    .hero-tagline {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--warm-600);
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--warm-700);
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .btn-primary { background: var(--warm-700); color: #fff; box-shadow: 0 4px 16px rgba(122,74,34,0.3); }
+    .btn-primary:hover { background: var(--warm-900); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(122,74,34,0.35); }
+    .btn-outline { background: transparent; color: var(--warm-700); border: 2px solid var(--warm-400); }
+    .btn-outline:hover { border-color: var(--warm-600); background: var(--warm-100); }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      animation: fadeUp 0.6s 0.5s ease both;
+    }
+
+    .hero-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--warm-800);
+      display: block;
+    }
+
+    .hero-stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: block;
+    }
+
+    /* ── MEMORIAL ── */
+    .memorial-banner {
+      background: var(--warm-900);
+      color: #fff;
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .memorial-banner::before {
+      content: '❝';
+      position: absolute;
+      font-size: 12rem;
+      font-family: 'Playfair Display', serif;
+      color: rgba(255,255,255,0.04);
+      top: -2rem;
+      left: 2rem;
+      line-height: 1;
+    }
+
+    .memorial-inner { position: relative; max-width: 700px; margin: 0 auto; }
+
+    .memorial-flame {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .memorial-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-style: italic;
+      color: var(--warm-300);
+      margin-bottom: 0.5rem;
+    }
+
+    .memorial-quote {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.8;
+      font-style: italic;
+    }
+
+    .memorial-founders {
+      margin-top: 1.5rem;
+      font-size: 13px;
+      color: var(--warm-400);
+      font-weight: 500;
+    }
+
+    /* ── SECTIONS COMMON ── */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--warm-500);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--warm-900);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-card-main {
+      background: linear-gradient(135deg, var(--warm-200), var(--warm-300));
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card-main::after {
+      content: '🌸';
+      font-size: 6rem;
+      position: absolute;
+      bottom: -1rem;
+      right: -1rem;
+      opacity: 0.2;
+    }
+
+    .about-card-main h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--warm-900);
+      margin-bottom: 0.5rem;
+    }
+
+    .about-card-main p { font-size: 14px; color: var(--warm-700); line-height: 1.8; }
+
+    .about-card-float {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background: var(--warm-900);
+      color: #fff;
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.5rem;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-card-float .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      display: block;
+    }
+
+    .about-card-float span { font-size: 12px; color: var(--warm-300); }
+
+    .about-text p { color: var(--text-muted); margin-bottom: 1rem; line-height: 1.8; }
+
+    .values-list { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 10px; }
+
+    .values-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .val-icon {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--warm-200);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── MISSION ── */
+    #mission { background: var(--warm-50); }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .pillar-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillar-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--warm-400), var(--warm-600));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    .pillar-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .pillar-card:hover::before { transform: scaleX(1); }
+
+    .pillar-emoji { font-size: 2.2rem; margin-bottom: 1rem; display: block; }
+
+    .pillar-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--warm-900);
+      margin-bottom: 0.5rem;
+    }
+
+    .pillar-card p { font-size: 13.5px; color: var(--text-muted); line-height: 1.7; }
+
+    /* ── PROGRAMS ── */
+    #programs { background: var(--white); }
+
+    .programs-list { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .program-card {
+      background: var(--warm-50);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1.5rem;
+      align-items: center;
+      transition: all 0.2s;
+    }
+
+    .program-card:hover { background: var(--white); box-shadow: var(--shadow); }
+
+    .prog-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--warm-300);
+      line-height: 1;
+      min-width: 3rem;
+    }
+
+    .prog-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--warm-900);
+      margin-bottom: 0.4rem;
+    }
+
+    .prog-info p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+    .prog-badge {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 50px;
+      white-space: nowrap;
+      align-self: flex-start;
+    }
+
+    /* ── IMPACT ── */
+    #impact {
+      background: linear-gradient(135deg, var(--warm-900) 0%, var(--warm-800) 100%);
+      color: #fff;
+    }
+
+    #impact .section-title { color: #fff; }
+    #impact .section-eyebrow { color: var(--warm-400); }
+    #impact .section-desc { color: rgba(255,255,255,0.65); }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .impact-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .impact-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--warm-300);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .impact-label { font-size: 13px; color: rgba(255,255,255,0.6); }
+
+    /* ── TEAM ── */
+    #team { background: var(--warm-50); }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .team-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .team-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+
+    .team-avatar {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 0 auto 1rem;
+    }
+
+    .team-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--warm-900);
+      margin-bottom: 4px;
+    }
+
+    .team-card .role { font-size: 13px; color: var(--warm-600); font-weight: 500; margin-bottom: 8px; display: block; }
+    .team-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    /* ── DONATE ── */
+    #donate { background: var(--white); }
+
+    .donate-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .donate-amounts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 1.5rem;
+    }
+
+    .amount-btn {
+      padding: 14px;
+      border: 2px solid var(--border);
+      background: var(--warm-50);
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: 'Playfair Display', serif;
+      color: var(--warm-700);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+
+    .amount-btn:hover, .amount-btn.active {
+      background: var(--warm-700);
+      color: #fff;
+      border-color: var(--warm-700);
+    }
+
+    .donate-input-group { margin-bottom: 1rem; }
+    .donate-input-group label { font-size: 13px; font-weight: 500; color: var(--text-muted); display: block; margin-bottom: 6px; }
+
+    .donate-input-group input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--warm-50);
+      color: var(--text);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .donate-input-group input:focus { border-color: var(--warm-500); background: #fff; }
+
+    .donate-note { font-size: 12px; color: var(--text-muted); margin-top: 0.8rem; font-style: italic; }
+
+    .donate-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--warm-900);
+      margin-bottom: 1rem;
+    }
+
+    .donate-info p { font-size: 14px; color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem; }
+
+    .donate-benefits { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+    .donate-benefits li {
+      display: flex;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-muted);
+      align-items: flex-start;
+    }
+
+    .benefit-icon { font-size: 16px; margin-top: 1px; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--warm-50); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .contact-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--warm-900);
+      margin-bottom: 1rem;
+    }
+
+    .contact-info p { font-size: 14px; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem; }
+
+    .contact-items { display: flex; flex-direction: column; gap: 12px; }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .contact-icon {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--warm-200);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .contact-item-text strong { font-size: 12px; font-weight: 600; color: var(--warm-700); display: block; text-transform: uppercase; letter-spacing: 0.5px; }
+    .contact-item-text span { font-size: 14px; color: var(--text-muted); }
+
+    .contact-form { display: flex; flex-direction: column; gap: 14px; }
+
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: 13px; font-weight: 500; color: var(--text-muted); }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      padding: 12px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { border-color: var(--warm-500); }
+
+    .form-group textarea { min-height: 100px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--warm-900);
+      color: rgba(255,255,255,0.75);
+      padding: 3rem 2rem 1.5rem;
+    }
+
+    .footer-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 2rem;
+    }
+
+    .footer-brand h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-brand p { font-size: 13px; line-height: 1.8; }
+
+    .footer-memorial {
+      margin-top: 1rem;
+      padding: 0.8rem 1rem;
+      border-left: 2px solid var(--warm-500);
+      font-size: 12px;
+      font-style: italic;
+      color: var(--warm-300);
+    }
+
+    footer h4 {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--warm-400);
+      margin-bottom: 1rem;
+    }
+
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    footer ul li a { font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+    footer ul li a:hover { color: var(--warm-300); }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--warm-50); padding: 1rem 2rem 2rem; border-bottom: 1px solid var(--border); gap: 1rem; }
+      .hamburger { display: flex; }
+
+      .about-grid, .donate-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-card-float { position: static; margin-top: 1rem; display: inline-block; }
+      .program-card { grid-template-columns: 1fr; }
+      .prog-number { font-size: 1.5rem; }
+      .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    /* ── TOAST ── */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--warm-900);
+      color: #fff;
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      box-shadow: var(--shadow-lg);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s;
+      z-index: 999;
+      max-width: 300px;
+    }
+
+    .toast.show { transform: translateY(0); opacity: 1; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#home" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      Kashyap Care
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#mission">Mission</a></li>
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#donate" class="nav-cta btn">Donate Now</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-circles">
+      <div class="hero-circle"></div>
+      <div class="hero-circle"></div>
+      <div class="hero-circle"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge"><div class="dot"></div> In Memory of Smt. Lalita Kumari · Est. 2024</div>
+      <h1 class="hero-title">Kashyap<br><span>Care</span></h1>
+      <p class="hero-tagline">Nurturing lives, one hand at a time.</p>
+      <p class="hero-desc">A non-governmental organisation dedicated to providing daily essentials, medical support, and humanitarian aid to those who need it most — founded by the Kashyap family in loving memory of Smt. Lalita Kumari.</p>
+      <div class="hero-btns">
+        <a href="#donate" class="btn btn-primary">❤️ Donate Now</a>
+        <a href="#programs" class="btn btn-outline">Our Programs →</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <span class="hero-stat-num">500+</span>
+          <span class="hero-stat-label">Families Helped</span>
+        </div>
+        <div>
+          <span class="hero-stat-num">12</span>
+          <span class="hero-stat-label">Medical Camps</span>
+        </div>
+        <div>
+          <span class="hero-stat-num">200+</span>
+          <span class="hero-stat-label">Volunteers</span>
+        </div>
+        <div>
+          <span class="hero-stat-num">4</span>
+          <span class="hero-stat-label">Active Programs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMORIAL BANNER -->
+  <div class="memorial-banner">
+    <div class="memorial-inner">
+      <span class="memorial-flame">🕯️</span>
+      <p class="memorial-name">Smt. Lalita Kumari</p>
+      <p class="memorial-quote">"Her warmth was a home for those who had none.<br>In her memory, we carry forward her spirit of selfless love and giving."</p>
+      <p class="memorial-founders">— Mrinal Kashyap &amp; Vanya Kashyap</p>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="about-card-main">
+            <h3>Founded from the heart</h3>
+            <p>Kashyap Care was born out of love — the love a grandson carries for his grandmother. Lalita ji lived her life in quiet service, always giving before thinking of herself. This NGO is our promise to carry that spirit forward, touching lives the way she touched ours.</p>
+          </div>
+          <div class="about-card-float">
+            <span class="num">100%</span>
+            <span>Volunteer-driven</span>
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <p class="section-eyebrow">Our Story</p>
+          <h2 class="section-title">Who We Are</h2>
+          <p>Kashyap Care is a grassroots NGO registered in Bengaluru, India. We work at the intersection of basic dignity and compassionate service — providing food, medicine, education, and livelihood support to underprivileged families across urban and rural communities.</p>
+          <p>We believe every person deserves a life of dignity. Our work is guided by Lalita Kumari ji's quiet philosophy: give without counting, serve without expecting.</p>
+          <ul class="values-list">
+            <li><div class="val-icon">💛</div> <span><strong>Compassion first</strong> — every action rooted in empathy</span></li>
+            <li><div class="val-icon">🤝</div> <span><strong>Community-led</strong> — we work with, not just for</span></li>
+            <li><div class="val-icon">🌿</div> <span><strong>Sustainable impact</strong> — lasting change, not one-time relief</span></li>
+            <li><div class="val-icon">🔍</div> <span><strong>Full transparency</strong> — every rupee accounted for</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section id="mission">
+    <div class="container">
+      <p class="section-eyebrow reveal">What We Stand For</p>
+      <h2 class="section-title reveal">Our Four Pillars</h2>
+      <p class="section-desc reveal">We address the most fundamental needs of human dignity — food, health, education, and livelihood — through on-ground programmes rooted in the communities we serve.</p>
+      <div class="pillars-grid">
+        <div class="pillar-card reveal">
+          <span class="pillar-emoji">🍚</span>
+          <h3>Daily Essentials</h3>
+          <p>Monthly distribution of food kits, clothing, hygiene supplies, and household necessities to families living below the poverty line.</p>
+        </div>
+        <div class="pillar-card reveal">
+          <span class="pillar-emoji">🏥</span>
+          <h3>Medical Aid</h3>
+          <p>Free health camps, medicine distribution, ambulance assistance, and hospital access support for those who cannot afford healthcare.</p>
+        </div>
+        <div class="pillar-card reveal">
+          <span class="pillar-emoji">📚</span>
+          <h3>Education Support</h3>
+          <p>School supplies, merit-cum-need scholarships, tutoring support, and digital literacy for children from underprivileged backgrounds.</p>
+        </div>
+        <div class="pillar-card reveal">
+          <span class="pillar-emoji">🌿</span>
+          <h3>Livelihood</h3>
+          <p>Vocational skill training, micro-grants, and employment linkages to help families become self-reliant and financially independent.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section id="programs">
+    <div class="container">
+      <p class="section-eyebrow reveal">What We Do</p>
+      <h2 class="section-title reveal">Active Programs</h2>
+      <p class="section-desc reveal">Four flagship programs, each designed to address a specific dimension of poverty with heart, consistency, and measurable impact.</p>
+      <div class="programs-list">
+        <div class="program-card reveal">
+          <div class="prog-number">01</div>
+          <div class="prog-info">
+            <h3>Annapurna Ration Drive</h3>
+            <p>Every month, we distribute dry ration kits — rice, dal, cooking oil, spices, and hygiene essentials — to over 100 families across Bengaluru. Named after the goddess of food and nourishment, this drive ensures no family sleeps hungry.</p>
+          </div>
+          <span class="prog-badge" style="background:#fce9d8; color:#8B4513;">Food</span>
+        </div>
+        <div class="program-card reveal">
+          <div class="prog-number">02</div>
+          <div class="prog-info">
+            <h3>Swasthya Sewa Camp</h3>
+            <p>Quarterly free health check-up camps with volunteer doctors, nurses, and specialists. We provide on-site consultations, blood tests, medicines, and referrals for serious conditions — bringing healthcare to those who cannot access it.</p>
+          </div>
+          <span class="prog-badge" style="background:#d8ece8; color:#1a6b4a;">Health</span>
+        </div>
+        <div class="program-card reveal">
+          <div class="prog-number">03</div>
+          <div class="prog-info">
+            <h3>Vanya Scholarship Fund</h3>
+            <p>Named in honour of Vanya Kashyap, this annual scholarship supports girls from underprivileged families who demonstrate academic merit and potential. We cover school fees, books, uniforms, and examination costs for recipients.</p>
+          </div>
+          <span class="prog-badge" style="background:#e0e8fc; color:#2b4a8a;">Education</span>
+        </div>
+        <div class="program-card reveal">
+          <div class="prog-number">04</div>
+          <div class="prog-info">
+            <h3>Lalita Warmth Drive</h3>
+            <p>Every December, in loving memory of Smt. Lalita Kumari, we distribute blankets, woolens, warm clothing, and winter essentials to the homeless and elderly who brave the cold alone. A small act of warmth in her name.</p>
+          </div>
+          <span class="prog-badge" style="background:#fce8e8; color:#8a2525;">Winter</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section id="impact">
+    <div class="container">
+      <p class="section-eyebrow reveal">Our Numbers</p>
+      <h2 class="section-title reveal">Lives Touched, Hearts Moved</h2>
+      <p class="section-desc reveal">Every number below represents a real person, a real family, a real life changed. This is why we exist.</p>
+      <div class="impact-grid">
+        <div class="impact-card reveal"><span class="impact-num">500+</span><span class="impact-label">Families supported with ration kits</span></div>
+        <div class="impact-card reveal"><span class="impact-num">12</span><span class="impact-label">Free medical camps conducted</span></div>
+        <div class="impact-card reveal"><span class="impact-num">1,200+</span><span class="impact-label">Patients treated at camps</span></div>
+        <div class="impact-card reveal"><span class="impact-num">45</span><span class="impact-label">Scholarships awarded to girls</span></div>
+        <div class="impact-card reveal"><span class="impact-num">800+</span><span class="impact-label">Winter kits distributed</span></div>
+        <div class="impact-card reveal"><span class="impact-num">200+</span><span class="impact-label">Dedicated volunteers</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team">
+    <div class="container">
+      <p class="section-eyebrow reveal">The People Behind The Mission</p>
+      <h2 class="section-title reveal">Our Leadership</h2>
+      <p class="section-desc reveal">A family-founded organisation built on love, guided by the memory of one extraordinary woman.</p>
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="team-avatar" style="background:#f0dac5; color:#7a4a22;">MK</div>
+          <h3>Mrinal Kashyap</h3>
+          <span class="role">Founder &amp; President</span>
+          <p>Mrinal founded Kashyap Care in memory of his grandmother Lalita Kumari, channelling grief into purpose and love into action.</p>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-avatar" style="background:#d8ece8; color:#1a6b4a;">VK</div>
+          <h3>Vanya Kashyap</h3>
+          <span class="role">Youth Ambassador</span>
+          <p>Vanya represents the next generation of the Kashyap Care mission — bringing fresh energy, passion, and the voice of tomorrow's India.</p>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-avatar" style="background:#e0e8fc; color:#2b4a8a;">+</div>
+          <h3>Join Our Team</h3>
+          <span class="role">Trustees &amp; Volunteers</span>
+          <p>We are always looking for passionate individuals — doctors, educators, administrators — to join our growing family of changemakers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DONATE -->
+  <section id="donate">
+    <div class="container">
+      <p class="section-eyebrow reveal">Give Back</p>
+      <h2 class="section-title reveal">Support Kashyap Care</h2>
+      <div class="donate-grid">
+        <div class="reveal">
+          <p style="font-size:14px; color:var(--text-muted); margin-bottom:1.5rem; line-height:1.8;">Every rupee you donate goes directly to people in need. Choose an amount, or enter your own. Your contribution is tax-deductible under Section 80G.</p>
+          <div class="donate-amounts" id="amountBtns">
+            <button class="amount-btn" onclick="selectAmount(this, '500')">₹500</button>
+            <button class="amount-btn active" onclick="selectAmount(this, '1000')">₹1,000</button>
+            <button class="amount-btn" onclick="selectAmount(this, '2500')">₹2,500</button>
+            <button class="amount-btn" onclick="selectAmount(this, '5000')">₹5,000</button>
+          </div>
+          <div class="donate-input-group">
+            <label>Full Name</label>
+            <input type="text" id="donorName" placeholder="Your name" />
+          </div>
+          <div class="donate-input-group">
+            <label>Email Address</label>
+            <input type="email" id="donorEmail" placeholder="your@email.com" />
+          </div>
+          <div class="donate-input-group">
+            <label>Amount (₹)</label>
+            <input type="number" id="donorAmount" placeholder="Enter amount" value="1000" min="1" />
+          </div>
+          <button class="btn btn-primary" style="width:100%; justify-content:center; margin-top:0.5rem;" onclick="handleDonate()">❤️ Donate to Kashyap Care</button>
+          <p class="donate-note">* This is a demonstration form. In production, integrate a payment gateway like Razorpay or PayU.</p>
+        </div>
+        <div class="donate-info reveal">
+          <h3>Why Your Donation Matters</h3>
+          <p>When you donate to Kashyap Care, you become part of the family that Lalita Kumari ji always believed in — a community that looks out for one another.</p>
+          <ul class="donate-benefits">
+            <li><span class="benefit-icon">🍚</span> ₹500 feeds a family for a month</li>
+            <li><span class="benefit-icon">💊</span> ₹1,000 provides medicines for 5 patients</li>
+            <li><span class="benefit-icon">📚</span> ₹2,500 funds a child's school supplies for a year</li>
+            <li><span class="benefit-icon">🧥</span> ₹5,000 gives warmth to 10 homeless individuals this winter</li>
+            <li><span class="benefit-icon">🧾</span> All donations are 80G tax-exempt</li>
+            <li><span class="benefit-icon">📊</span> Full financial reports published annually</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <p class="section-eyebrow reveal">Get in Touch</p>
+      <h2 class="section-title reveal">Contact Us</h2>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h3>We'd love to hear from you</h3>
+          <p>Whether you want to volunteer, partner with us, donate, or simply know more about our work — our doors are always open. Reach out and we'll get back to you within 48 hours.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div class="contact-item-text">
+                <strong>Address</strong>
+                <span>Kashyap Care Foundation, Bengaluru, Karnataka, India</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">✉️</div>
+              <div class="contact-item-text">
+                <strong>Email</strong>
+                <span>contact@kashyapcare.org</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div class="contact-item-text">
+                <strong>Phone</strong>
+                <span>+91 98XXX XXXXX</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">⏰</div>
+              <div class="contact-item-text">
+                <strong>Office Hours</strong>
+                <span>Monday – Saturday, 10 AM – 6 PM IST</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="contact-form">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" id="contactName" placeholder="Full name" />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" id="contactEmail" placeholder="your@email.com" />
+            </div>
+            <div class="form-group">
+              <label>I want to…</label>
+              <select id="contactType">
+                <option>Volunteer with Kashyap Care</option>
+                <option>Make a donation enquiry</option>
+                <option>Partner / Corporate CSR</option>
+                <option>Media enquiry</option>
+                <option>General question</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea id="contactMsg" placeholder="Tell us how you'd like to help or what you'd like to know…"></textarea>
+            </div>
+            <button class="btn btn-primary" onclick="handleContact()">Send Message →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h2>Kashyap Care</h2>
+        <p>A non-governmental organisation dedicated to daily essentials, medical aid, education, and livelihood support for underprivileged communities across India.</p>
+        <div class="footer-memorial">
+          Founded in eternal memory of<br>
+          <strong style="color:#e8d5c4;">Smt. Lalita Kumari</strong>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#mission">Our Mission</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#impact">Our Impact</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#donate">Donate</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="#programs">Annapurna Ration Drive</a></li>
+          <li><a href="#programs">Swasthya Sewa Camp</a></li>
+          <li><a href="#programs">Vanya Scholarship Fund</a></li>
+          <li><a href="#programs">Lalita Warmth Drive</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Kashyap Care. All rights reserved. | Founded by Mrinal Kashyap, Bengaluru</span>
+      <span>In memory of Smt. Lalita Kumari 🕯️</span>
+    </div>
+  </footer>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // Mobile menu
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    // Close menu on link click
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+    });
+
+    // Donation amount selector
+    function selectAmount(btn, val) {
+      document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('donorAmount').value = val;
+    }
+
+    // Toast
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3500);
+    }
+
+    // Donate handler
+    function handleDonate() {
+      const name = document.getElementById('donorName').value.trim();
+      const email = document.getElementById('donorEmail').value.trim();
+      const amount = document.getElementById('donorAmount').value;
+      if (!name || !email || !amount) {
+        showToast('Please fill in all fields to proceed.');
+        return;
+      }
+      showToast('🙏 Thank you ' + name + '! Your ₹' + Number(amount).toLocaleString('en-IN') + ' donation will make a real difference.');
+    }
+
+    // Contact handler
+    function handleContact() {
+      const name = document.getElementById('contactName').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const msg = document.getElementById('contactMsg').value.trim();
+      if (!name || !email || !msg) {
+        showToast('Please fill in all fields before sending.');
+        return;
+      }
+      showToast('✅ Message sent! We\'ll get back to you within 48 hours, ' + name + '.');
+      document.getElementById('contactName').value = '';
+      document.getElementById('contactEmail').value = '';
+      document.getElementById('contactMsg').value = '';
+    }
+
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+
+    // Nav highlight on scroll
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
+      });
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--warm-700)' : '';
+      });
+    });
+  </script>
+</body>
+</html>
